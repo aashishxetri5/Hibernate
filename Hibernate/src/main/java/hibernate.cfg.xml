@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Hibernate DTD -->
+<!DOCTYPE hibernate-configuration PUBLIC 
+	"-//Hibernate/Hibernate Configuration DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<session-factory>
+		<property name="connection.driver.class">com.mysql.cj.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/hibernate</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password"></property>
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hbm2ddl.auto">update</property>
+		<!-- create = creates table everytime we run the program and deletes table 
+			when program ends. Good for testing purpose.
+			
+			update = creates table once, 
+			then updates the table each time. Doesn't delete table when program ends.
+		-->
+		
+		<property name="show_sql">true</property>
+		<!-- This is used so that the sql queries run by hibernate can be seen -->
+	</session-factory>
+
+</hibernate-configuration>
