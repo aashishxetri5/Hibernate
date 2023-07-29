@@ -3,7 +3,6 @@ package com.learning;
 import org.hibernate.Transaction;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Date;
 
@@ -12,7 +11,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 import com.learning.entities.Address;
-import com.learning.entities.Student;
+//import com.learning.entities.Student;
 
 public class App {
 	public static void main(String[] args) throws IOException {
