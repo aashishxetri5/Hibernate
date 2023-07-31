@@ -24,6 +24,9 @@
 		<mapping class="com.learning.entities.Student" />
 		<mapping class="com.learning.entities.Address" />
 
+		<mapping class="com.learning.entities.Question" />
+		<mapping class="com.learning.entities.Answer" />
+
 	</session-factory>
 
 </hibernate-configuration>
