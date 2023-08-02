@@ -41,6 +41,14 @@ public class ManyToOneMapper {
 		session.save(emp);
 		session.save(acc1);
 		session.save(acc2);
+
+//		Fetching Data
+		Employee emp = (Employee) session.get(Employee.class, 211812);
+		System.out.println(emp.getEmpAccount());
+		
+		for (Accounts a: emp.getEmpAccount()) {
+			System.out.println(a.getAccountNumber());
+		}
 		
 		tx.commit();
 		
