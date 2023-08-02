@@ -13,7 +13,7 @@
 		<property name="connection.username">root</property>
 		<property name="connection.password"></property>
 		<property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
-		<property name="hbm2ddl.auto">update</property>
+		<property name="hbm2ddl.auto">create</property>
 		<!-- create = creates table everytime we run the program and deletes table 
 			when program ends. Good for testing purpose. update = creates table once, 
 			then updates the table each time. Doesn't delete table when program ends. -->
@@ -26,6 +26,9 @@
 
 		<mapping class="com.learning.entities.Question" />
 		<mapping class="com.learning.entities.Answer" />
+
+		<mapping class="com.learning.mapping.Employee" />
+		<mapping class="com.learning.mapping.Accounts" />
 
 	</session-factory>
 
