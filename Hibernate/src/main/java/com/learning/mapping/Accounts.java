@@ -51,4 +51,9 @@ public class Accounts {
 		this.employee = employee;
 	}
 
+	@Override
+	public String toString() {
+		return "Accounts [sn=" + sn + ", accountNumber=" + accountNumber + ", employee=" + employee + "]";
+	}
+
 }

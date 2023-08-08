@@ -13,13 +13,14 @@
 		<property name="connection.username">root</property>
 		<property name="connection.password"></property>
 		<property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
-		<property name="hbm2ddl.auto">create</property>
+		<property name="hbm2ddl.auto">update</property>
 		<!-- create = creates table everytime we run the program and deletes table 
 			when program ends. Good for testing purpose. update = creates table once, 
 			then updates the table each time. Doesn't delete table when program ends. -->
 
 		<property name="show_sql">true</property>
 		<!-- This is used so that the sql queries run by hibernate can be seen -->
+		<property name="format_sql">true</property>
 
 		<mapping class="com.learning.entities.Student" />
 		<mapping class="com.learning.entities.Address" />

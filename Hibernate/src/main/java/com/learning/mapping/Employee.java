@@ -3,6 +3,7 @@ package com.learning.mapping;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
@@ -12,7 +13,7 @@ public class Employee {
 	private int empId;
 	private String name;
 
-	@OneToMany(mappedBy = "employee")
+	@OneToMany(mappedBy = "employee", fetch = FetchType.LAZY) //by default fetch is lazy
 	private List<Accounts> empAccount;
 
 	public Employee() {
