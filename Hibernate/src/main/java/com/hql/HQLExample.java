@@ -15,6 +15,7 @@ import com.learning.entities.Student;
 
 public class HQLExample {
 
+	@SuppressWarnings("deprecation")
 	public static void main(String[] args) throws HibernateException{
 		SessionFactory factory = new Configuration().configure().buildSessionFactory();
 
@@ -34,12 +35,15 @@ public class HQLExample {
 		
 		System.out.println("----------------------------------------");
 		
-		@SuppressWarnings("deprecation")
-		Query<Student> deleteQuery = session.createQuery("delete from Student where id= :studentId");
-		deleteQuery.setParameter("studentId", 211802);
+//		Query<Student> deleteQuery = session.createQuery("delete from Student where id= :studentId");
+//		deleteQuery.setParameter("studentId", 211802);
 		
-		int r = deleteQuery.executeUpdate();
-		System.out.println("Deleted " + r);
+		Query<Student> updateQuery = session.createQuery("update Student set address= :address where id= :stdId");
+		updateQuery.setParameter("address", "Aarubari");
+		updateQuery.setParameter("stdId", 211812);
+		
+		int r = updateQuery.executeUpdate();
+		System.out.println("Rows Affected: " + r);
 		
 		
 		tx.commit();
