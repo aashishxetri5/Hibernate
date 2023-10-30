@@ -100,10 +100,32 @@ public class HQLJoins {
 		}
 		session.close();
 	}
+	
+	public static void innerJoin() {
+		Session session = getFactory().openSession();
+		
+		String leftJoinQuery = "SELECT b, a from Book b LEFT JOIN b.author a";
+		
+		Query q = session.createQuery(leftJoinQuery);
+		
+		List<Object []> results = q.list();
+		
+		for(Object[] result: results) {
+			System.out.println("--------------------------------------------");
+			Book book = (Book) result[0];
+			Author author = (Author) result[1];
+			
+			System.out.println(book + "\t" +  author);
+		}
+		
+		session.close();
+		
+	}
 
 	public static void main(String[] args) {
 //		populateData();
-		simpleJoin();
+//		simpleJoin();
+		innerJoin();
 		closeFactory();
 	}
 
