@@ -33,6 +33,9 @@
 		
 		<mapping class="com.learning.map1.Employees" />
 		<mapping class="com.learning.map1.Project" />
+		
+		<mapping class="com.hql.joins.Author" />
+		<mapping class="com.hql.joins.Book" />
 
 	</session-factory>
 
