@@ -1,0 +1,16 @@
+## Fetching Specific Columns:
+
+String hql = "SELECT b.title, a.name FROM Book b JOIN b.author a";
+Query query = session.createQuery(hql);
+List<Object[]> result = query.list();
+
+- You retrieve only specific columns or properties from the entities. The result is a list of arrays or other simple data structures.
+
+
+## Aliasing Entities:
+
+String hql = "SELECT b.title, a.name FROM Book b JOIN b.author a";
+Query query = session.createQuery(hql);
+List<Object[]> result = query.list();
+
+- You retrieve entire entities with all their properties. The result is a list of objects that include the full entity objects.
