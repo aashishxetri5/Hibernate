@@ -45,8 +45,8 @@ public class HQLExample {
 		int r = updateQuery.executeUpdate();
 		System.out.println("Rows Affected: " + r);
 		
-		
 		tx.commit();
+		
 		session.close();
 		factory.close();
 
