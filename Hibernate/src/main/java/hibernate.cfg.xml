@@ -19,9 +19,15 @@
 			then updates the table each time. Doesn't delete table when program ends. -->
 
 		<property name="show_sql">true</property>
+
 		<!-- This is used so that the sql queries run by hibernate can be seen -->
 		<property name="format_sql">true</property>
 
+		<!-- For Caching -->
+		<property name="cache.use_second_level_cache">true</property>
+		<property name="cache.region.factory_class">org.hibernate.cache.ehcache.internal.EhcacheRegionFactory</property>
+
+		<!-- Mappings -->
 		<mapping class="com.learning.entities.Student" />
 		<mapping class="com.learning.entities.Address" />
 
@@ -30,10 +36,10 @@
 
 		<mapping class="com.learning.mapping.Employee" />
 		<mapping class="com.learning.mapping.Accounts" />
-		
+
 		<mapping class="com.learning.map1.Employees" />
 		<mapping class="com.learning.map1.Project" />
-		
+
 		<mapping class="com.hql.joins.Author" />
 		<mapping class="com.hql.joins.Book" />
 

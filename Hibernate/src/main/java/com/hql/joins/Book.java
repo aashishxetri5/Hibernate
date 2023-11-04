@@ -1,5 +1,6 @@
 package com.hql.joins;
 
+import javax.persistence.Cacheable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,11 +10,16 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
 /**
  * Author Aashish
  */
 @Entity
 @Table(name = "book_tbl")
+@Cacheable
+@Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
 public class Book {
 
 	@Id
